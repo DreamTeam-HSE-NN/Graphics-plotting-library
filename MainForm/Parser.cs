@@ -1,16 +1,13 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace WindowsFormsApp1
 {
-    class Expression
+    public class Expression
     {
         public string token;
         //public Expression arg1;
         //public Expression arg2;
+        
         public Expression[] args = new Expression[0];
         public Expression(string token) { this.token = token; }
         public Expression(string token, Expression a)
@@ -27,98 +24,99 @@ namespace WindowsFormsApp1
             this.args[1] = b;
         }
     }
-    class Parcer
+    internal class Parser
     {
-        private string input;
-        private int i;
-        public Parcer(string Expression)
+        private string _input;
+        private int _i;
+
+        public Parser(string expression)
         {
-            input = Expression;
+            _input = expression;
         }
 
-        private string Parse_token()
+        private string ParseToken()
         {
-            if (i == input.Length - 1) return "";
-            while (input[i] == ' ') ++i;
+            if (_i == _input.Length - 1) return "";
+            while (_input[_i] == ' ') ++_i;
    
-            if (Char.IsDigit(input, i))
+            if (Char.IsDigit(_input, _i))
             {
                 string number = "";
-                while (Char.IsDigit(input, i) || input[i] == '.')
+                while (Char.IsDigit(_input, _i) || _input[_i] == '.')
                 {
-                    number += input[i];
-                    ++i;
+                    number += _input[_i];
+                    ++_i;
                 }
                 return number;
             }
 
-            switch (input[i])
+            switch (_input[_i])
             {
                 case '+':
-                    ++i;
+                    ++_i;
                     return "+";
                 case '-':
-                    ++i;
+                    ++_i;
                     return "-";
                 case '*':
-                    ++i;
+                    ++_i;
                     return "*";
                 case '/':
-                    ++i;
+                    ++_i;
                     return "/";
                 case '^':
-                    ++i;
+                    ++_i;
                     return "^";
                 case 's':
-                    if (input[i + 1] == 'i')
+                    if (_input[_i + 1] == 'i')
                     {
-                        i += 2;
+                        _i += 2;
                         goto case 'n';
                     }
-                    if (input[i + 1] == '(')
+                    if (_input[_i + 1] == '(')
                     {
-                        ++i;
+                        ++_i;
                         return "cos";
                     }
                     break;
                 case 'n':
-                    if (input[i] == 'n')
+                    if (_input[_i] == 'n')
                     {
-                        ++i;
+                        ++_i;
                         return "sin";
                     }
                     break;
                 
                 case '(':
-                    ++i;
+                    ++_i;
                     return "(";
                 case ')':
-                    ++i;
+                    ++_i;
                     return ")";
             }
             return "";
         }
 
 
-        private Expression Parse_simple_expression()
+        private Expression ParseSimpleExpression()
         {
-            string token = Parse_token();
+            string token = ParseToken();
             if (token == "")
                 return new Expression("Ivaleb");
 
             if (token == "(")
             {
                 var result = Parse();
-                if (Parse_token() != ")") return new Expression("Expexted ) , dalba'b");
+                if (ParseToken() != ")") return new Expression("Expexted ) , dalba'b");
                 return result;
             }
 
             if (Char.IsDigit(token[0]))
                 return new Expression(token);
 
-            var arg = Parse_simple_expression();
+            var arg = ParseSimpleExpression();
 
-            return new Expression(token, Parse_simple_expression());
+            return new Expression(token, ParseSimpleExpression());
         }
 
         private int Get_priority(string op)
@@ -139,28 +137,28 @@ namespace WindowsFormsApp1
                     return 0;
             }
         }
-        Expression Parse_binary_expression(int min_priority)
+        private Expression ParseBinaryExpression(int minPriority)
         {
-            var left_expr = Parse_simple_expression();
+            var leftExpr = ParseSimpleExpression();
 
             while (true)
             {
-                var op = Parse_token();
+                var op = ParseToken();
                 var priority = Get_priority(op);
-                if (priority <= min_priority)
+                if (priority <= minPriority)
                 {
-                    i -= op.Length;
-                    return left_expr;
+                    _i -= op.Length;
+                    return leftExpr;
                 }
 
-                var right_expr = Parse_binary_expression(priority);
-                left_expr = new Expression(op, left_expr, right_expr);
+                var rightExpr = ParseBinaryExpression(priority);
+                leftExpr = new Expression(op, leftExpr, rightExpr);
             }
         }
 
         public Expression Parse()
         {
-            return Parse_binary_expression(0);
+            return ParseBinaryExpression(0);
         }
 
         public double Calculate(Expression expr)
