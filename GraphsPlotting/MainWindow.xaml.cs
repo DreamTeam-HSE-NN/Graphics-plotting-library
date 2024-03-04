@@ -38,7 +38,7 @@ namespace GraphsPlotting
                 System.Windows.Forms.MessageBox.Show("Incorrect Bounds");
                 return;
             }
-            
+                  
 
             // Заполняем список точек
             for (double x = xmin; x < xmax; x += (xmax - xmin)/100000)
@@ -82,6 +82,10 @@ namespace GraphsPlotting
             if (str == "Clear")
             {
                 TextBoxInput.Text = "";
+
+                GraphPane pane = zgc.GraphPane;
+                pane.CurveList.Clear();
+                zgc.Invalidate();
             }
             else
             {
@@ -100,6 +104,6 @@ namespace GraphsPlotting
             
         }
 
- 
+        
     }
 }

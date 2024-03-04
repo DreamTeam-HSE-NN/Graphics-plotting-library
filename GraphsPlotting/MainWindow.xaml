@@ -11,7 +11,7 @@
         Title="MainWindow" Height="644" Width="1232" FontFamily="Times New Roman" FontSize="16">
     <Grid Name="MainRoot" Margin="0,0,0,-16" Background="Gray">
 
-        <TextBox x:Name="TextBoxInput" HorizontalAlignment="Left" Margin="0,141,0,0" TextWrapping="Wrap" Text="Write your expression here" VerticalAlignment="Top" Width="436" Height="60" TextChanged="TextBoxInput_TextChanged"/>
+        <TextBox x:Name="TextBoxInput" HorizontalAlignment="Left" Margin="0,141,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="490" Height="39" TextChanged="TextBoxInput_TextChanged"/>
         <Button x:Name ="BtnPrint" Content="Print" HorizontalAlignment="Left" Margin="436,386,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.52,0.501" Height="70" Width="109" Click="BtnPrint_Click"/>
         <Button Content="1" HorizontalAlignment="Left" Margin="0,526,0,0" VerticalAlignment="Top" Height="70" Width="109" Click="BtnPrint_Click"/>
         <Button Content="2" HorizontalAlignment="Left" Margin="109,526,0,0" VerticalAlignment="Top" Height="70" Width="109" Click="Button_Click"/>
@@ -33,10 +33,15 @@
         <Button Content="Clear" HorizontalAlignment="Left" Margin="436,456,0,0" VerticalAlignment="Top" Height="70" Width="109" Click="Button_Click"/>
 
 
-        <TextBox x:Name="TextBoxUpBound" HorizontalAlignment="Left" Margin="272,228,0,0" TextWrapping="Wrap" Text="UpBound" VerticalAlignment="Top" Width="164" Height="48" TextChanged="TextBoxInput_TextChanged"/>
-        <TextBox x:Name="TextBoxDownBound" HorizontalAlignment="Left" Margin="0,228,0,0" TextWrapping="Wrap" Text="DownBound" VerticalAlignment="Top" Width="164" Height="48" TextChanged="TextBoxInput_TextChanged"/>
+        <TextBox x:Name="TextBoxUpBound" HorizontalAlignment="Left" Margin="272,228,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="164" Height="38" TextChanged="TextBoxInput_TextChanged"/>
+        <TextBox x:Name="TextBoxDownBound" HorizontalAlignment="Left" Margin="0,228,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="164" Height="38" TextChanged="TextBoxInput_TextChanged"/>
         <WindowsFormsHost HorizontalAlignment="Left" Height="586" Margin="550,10,0,0" VerticalAlignment="Top" Width="661" ChildChanged="WindowsFormsHost_ChildChanged">
             <zed:ZedGraphControl Name="zgc" x:Name="zgc" Width="400" Height="400" />
         </WindowsFormsHost>
+        <Button Content="Button" HorizontalAlignment="Left" Margin="490,351,0,0" VerticalAlignment="Top"/>
+        <Button Content="Add New Graph" HorizontalAlignment="Left" Margin="436,316,0,0" VerticalAlignment="Top" Height="70" Width="109"  />
+        <Label Content="Write your expression here:" HorizontalAlignment="Left" Margin="0,109,0,0" VerticalAlignment="Top" Height="32" Width="436"/>
+        <Label Content="DownBound:" HorizontalAlignment="Left" Margin="0,201,0,0" VerticalAlignment="Top" Width="164" Height="27"/>
+        <Label Content="UpBound:" HorizontalAlignment="Left" Margin="272,201,0,0" VerticalAlignment="Top" Height="41" Width="164"/>
     </Grid>
 </Window>
