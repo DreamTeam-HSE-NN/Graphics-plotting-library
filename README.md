@@ -1,1 +1,1 @@
-# GraphicsPlottingLibrary
+# GraphsPlotting
