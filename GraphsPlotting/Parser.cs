@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq.Expressions;
 
 namespace GraphsPlotting
 {
@@ -7,7 +8,7 @@ namespace GraphsPlotting
         public string Token;
         //public Expression arg1;
         //public Expression arg2;
-        public Expression[] Args = new Expression[0];
+        public Expression[] Args = [];
         public Expression(string token) { this.Token = token; }
         public Expression(string token, Expression a)
         {
@@ -42,7 +43,7 @@ namespace GraphsPlotting
             if (Char.IsDigit(_input, _i))
             {
                 string number = "";
-                while (Char.IsDigit(_input, _i) || _input[_i] == '.')
+                while (Char.IsDigit(_input, _i) || _input[_i] == '.' || _input[_i] == ',')
                 {
                     number += _input[_i];
                     ++_i;
@@ -112,12 +113,12 @@ namespace GraphsPlotting
         {
             var token = Parse_token();
             if (token == "")
-                return new Expression("Ivaleb");
+                return new Expression("Incorrect input");
 
             if (token == "(")
             {
                 var result = Parse();
-                if (Parse_token() != ")") return new Expression("Expexted ) , dalba'b");
+                if (Parse_token() != ")") return new Expression("Expexted )");
                 return result;
             }
 
@@ -150,6 +151,13 @@ namespace GraphsPlotting
         Expression Parse_binary_expression(int minPriority)
         {
             var leftExpr = Parse_simple_expression();
+            if (leftExpr.Args.Length != 0)
+            {
+                if (leftExpr.Args[0].Token == "Incorrect input" || leftExpr.Args[0].Token == "Expexted )")
+                {
+                    return leftExpr.Args[0];
+                }
+            }
 
             while (true)
             {
@@ -168,9 +176,14 @@ namespace GraphsPlotting
 
         public Expression Parse()
         {
-            return Parse_binary_expression(0);
+            var result = Parse_binary_expression(0);
+            if (result.Token == "Incorrect input" || result.Token == "Expexted )")
+            {
+                MessageBox.Show(result.Token);
+                return new Expression("Error");
+            }
+            else return result;
         }
-
         public double Calculate(Expression expr, double x)
         {
             switch (expr.Args.Length)

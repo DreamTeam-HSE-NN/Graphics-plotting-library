@@ -8,30 +8,40 @@
         
         
         mc:Ignorable="d"
-        Title="MainWindow" Height="722" Width="1356">
-    <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="971*"/>
-            <ColumnDefinition Width="17*"/>
-            <ColumnDefinition Width="11*"/>
-        </Grid.ColumnDefinitions>
-        <TextBox x:Name="TextBoxInput" HorizontalAlignment="Left" Margin="37,46,0,0" TextWrapping="Wrap" Text="Write your expression here" VerticalAlignment="Top" Width="330" Height="25" TextChanged="TextBoxInput_TextChanged"/>
-        <Button x:Name="BtnPrint" Content="Print" HorizontalAlignment="Left" Margin="37,171,0,0" VerticalAlignment="Top" Height="82" Width="330" Click="BtnPrint_Click"/>
-        <Canvas RenderTransformOrigin="0.509,0.495" Margin="390,11,0,25" HorizontalAlignment="Left" Width="400">
-            <Grid Name="grid1" Height="373" Width="357" HorizontalAlignment="Center" VerticalAlignment="Top" Canvas.Top="10" Canvas.Left="20">
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="50*"/>
-                    <RowDefinition Height="54*"/>
-                    <RowDefinition Height="269*"/>
-                </Grid.RowDefinitions>
-                <Polyline Name="Graph" Stroke="Red" StrokeThickness="1" Margin="0,0,-10,0" Grid.RowSpan="3"/>
-            </Grid>
-        </Canvas>
+        Title="MainWindow" Height="644" Width="1232" FontFamily="Times New Roman" FontSize="16">
+    <Grid Name="MainRoot" Margin="0,0,0,-16" Background="Gray">
 
-        <TextBox x:Name="TextBoxUpBound" HorizontalAlignment="Left" Margin="245,86,0,0" TextWrapping="Wrap" Text="UpBound" VerticalAlignment="Top" Width="122" Height="20" TextChanged="TextBoxInput_TextChanged"/>
-        <TextBox x:Name="TextBoxDownBound" HorizontalAlignment="Left" Margin="37,86,0,0" TextWrapping="Wrap" Text="DownBound" VerticalAlignment="Top" Width="102" Height="20" TextChanged="TextBoxInput_TextChanged"/>
-        <WindowsFormsHost HorizontalAlignment="Left" Height="638" Margin="400,27,0,0" VerticalAlignment="Top" Width="882" ChildChanged="WindowsFormsHost_ChildChanged">
+        <TextBox x:Name="TextBoxInput" HorizontalAlignment="Left" Margin="0,141,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="490" Height="39" TextChanged="TextBoxInput_TextChanged"/>
+        <Button x:Name ="BtnPrint" Content="Print" HorizontalAlignment="Left" Margin="436,386,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.52,0.501" Height="70" Width="109" Click="BtnPrint_Click"/>
+        <Button Content="1" HorizontalAlignment="Left" Margin="0,526,0,0" VerticalAlignment="Top" Height="70" Width="109" Click="BtnPrint_Click"/>
+        <Button Content="2" HorizontalAlignment="Left" Margin="109,526,0,0" VerticalAlignment="Top" Height="70" Width="109" Click="Button_Click"/>
+        <Button Content="3" HorizontalAlignment="Left" Margin="218,526,0,0" VerticalAlignment="Top" Height="70" Width="109" Click="Button_Click"/>
+        <Button Content="4" HorizontalAlignment="Left" Margin="0,456,0,0" VerticalAlignment="Top" Height="70" Width="109" Click="Button_Click"/>
+        <Button Content="5" HorizontalAlignment="Left" Margin="109,456,0,0" VerticalAlignment="Top" Height="70" Width="109" Click="Button_Click"/>
+        <Button Content="6" HorizontalAlignment="Left" Margin="218,456,0,0" VerticalAlignment="Top" Height="70" Width="109" Click="Button_Click"/>
+        <Button Content="7" HorizontalAlignment="Left" Margin="0,386,0,0" VerticalAlignment="Top" Height="70" Width="109" Click="Button_Click"/>
+        <Button Content="8" HorizontalAlignment="Left" Margin="109,386,0,0" VerticalAlignment="Top" Height="70" Width="109" Click="Button_Click"/>
+        <Button Content="9" HorizontalAlignment="Left" Margin="218,386,0,0" VerticalAlignment="Top" Height="70" Width="109" Click="Button_Click"/>
+        <Button Content="(" HorizontalAlignment="Left" Margin="0,316,0,0" VerticalAlignment="Top" Height="70" Width="109" Click="Button_Click"/>
+        <Button Content=")" HorizontalAlignment="Left" Margin="109,316,0,0" VerticalAlignment="Top" Height="70" Width="109" Click="Button_Click"/>
+        <Button Content="^" HorizontalAlignment="Left" Margin="218,316,0,0" VerticalAlignment="Top" Height="70" Width="109" Click="Button_Click"/>
+        <Button Content="/" HorizontalAlignment="Left" Margin="327,526,0,0" VerticalAlignment="Top" Height="70" Width="109" Click="Button_Click"/>
+        <Button Content="+" HorizontalAlignment="Left" Margin="327,456,0,0" VerticalAlignment="Top" Height="70" Width="109" Click="Button_Click"/>
+        <Button Content="-" HorizontalAlignment="Left" Margin="327,386,0,0" VerticalAlignment="Top" Height="70" Width="109" Click="Button_Click"/>
+        <Button Content="*" HorizontalAlignment="Left" Margin="327,316,0,0" VerticalAlignment="Top" Height="70" Width="109" Click="Button_Click"/>
+        <Button Content="0" HorizontalAlignment="Left" Margin="436,526,0,0" VerticalAlignment="Top" Height="70" Width="109" Click="Button_Click"/>
+        <Button Content="Clear" HorizontalAlignment="Left" Margin="436,456,0,0" VerticalAlignment="Top" Height="70" Width="109" Click="Button_Click"/>
+
+
+        <TextBox x:Name="TextBoxUpBound" HorizontalAlignment="Left" Margin="272,228,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="164" Height="38" TextChanged="TextBoxInput_TextChanged"/>
+        <TextBox x:Name="TextBoxDownBound" HorizontalAlignment="Left" Margin="0,228,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="164" Height="38" TextChanged="TextBoxInput_TextChanged"/>
+        <WindowsFormsHost HorizontalAlignment="Left" Height="586" Margin="550,10,0,0" VerticalAlignment="Top" Width="661" ChildChanged="WindowsFormsHost_ChildChanged">
             <zed:ZedGraphControl Name="zgc" x:Name="zgc" Width="400" Height="400" />
         </WindowsFormsHost>
+        <Button Content="Button" HorizontalAlignment="Left" Margin="490,351,0,0" VerticalAlignment="Top"/>
+        <Button Content="Add New Graph" HorizontalAlignment="Left" Margin="436,316,0,0" VerticalAlignment="Top" Height="70" Width="109"  />
+        <Label Content="Write your expression here:" HorizontalAlignment="Left" Margin="0,109,0,0" VerticalAlignment="Top" Height="32" Width="436"/>
+        <Label Content="DownBound:" HorizontalAlignment="Left" Margin="0,201,0,0" VerticalAlignment="Top" Width="164" Height="27"/>
+        <Label Content="UpBound:" HorizontalAlignment="Left" Margin="272,201,0,0" VerticalAlignment="Top" Height="41" Width="164"/>
     </Grid>
 </Window>
