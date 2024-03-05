@@ -13,6 +13,8 @@ namespace GraphsPlotting
         public MainWindow()
         {
             InitializeComponent();
+            var a = new NewWpfWindow();
+            a.Show();
         }
 
         private void BtnPrint_Click(object sender, RoutedEventArgs e)
