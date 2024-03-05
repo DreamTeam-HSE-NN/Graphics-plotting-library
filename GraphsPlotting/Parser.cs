@@ -9,26 +9,26 @@ namespace GraphsPlotting
         //public Expression arg1;
         //public Expression arg2;
         public Expression[] Args = [];
-        public Expression(string token) { this.Token = token; }
+        public Expression(string token) { Token = token; }
         public Expression(string token, Expression a)
         {
-            this.Token = token;
-            this.Args = new Expression[1];
-            this.Args[0] = a;
+            Token = token;
+            Args = new Expression[1];
+            Args[0] = a;
         }
         public Expression(string token, Expression a, Expression b)
         {
-            this.Token = token;
-            this.Args = new Expression[2];
-            this.Args[0] = a;
-            this.Args[1] = b;
+            Token = token;
+            Args = new Expression[2];
+            Args[0] = a;
+            Args[1] = b;
         }
     }
-    class Parcer
+    class Parser
     {
         private string _input;
         private int _i;
-        public Parcer(string expression)
+        public Parser(string expression)
         {
             _input = expression;
         }
@@ -109,7 +109,7 @@ namespace GraphsPlotting
         }
 
 
-        private Expression Parse_simple_expression()
+        private Expression ParseSimpleExpression()
         {
             var token = Parse_token();
             if (token == "")
@@ -125,7 +125,7 @@ namespace GraphsPlotting
             if (Char.IsDigit(token[0]) || token[0] == 'x')
                 return new Expression(token);
 
-            var arg = Parse_simple_expression();
+            var arg = ParseSimpleExpression();
 
             return new Expression(token, arg);
         }
@@ -150,7 +150,7 @@ namespace GraphsPlotting
         }
         Expression Parse_binary_expression(int minPriority)
         {
-            var leftExpr = Parse_simple_expression();
+            var leftExpr = ParseSimpleExpression();
             if (leftExpr.Args.Length != 0)
             {
                 if (leftExpr.Args[0].Token == "Incorrect input" || leftExpr.Args[0].Token == "Expexted )")

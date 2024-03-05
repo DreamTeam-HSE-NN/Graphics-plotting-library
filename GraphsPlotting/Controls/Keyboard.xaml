@@ -1,0 +1,102 @@
+﻿<helpers:UserControlBase x:Class="GraphsPlotting.Controls.Keyboard"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:GraphsPlotting.Controls"
+             xmlns:helpers="clr-namespace:GraphsPlotting.Helpers" d:DataContext="{d:DesignInstance Type=local:KeyboardModel}"
+                         mc:Ignorable="d" d:DesignHeight="139.84" d:DesignWidth="233.743">
+    
+    <Border Style="{StaticResource BorderDefaultStyle}">
+        <DockPanel>
+            <TextBox DockPanel.Dock="Top" MinHeight="50"
+                     Style="{StaticResource TextBoxCalcStyle}"
+                     Text="{Binding Path=Expression, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+
+            <Grid VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+
+                <!--===================ЦИФЕРБЛАТ===================-->
+                <Button Grid.Row="0" Grid.Column="0" Style="{StaticResource ButtonPadStyle}"
+                    Command="{Binding Path=ClickDigitCommand, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"
+                    CommandParameter="7">
+                    <TextBlock Style="{StaticResource TextBlockDefaultStyle}" Text="7"/>
+                </Button>
+                <Button Grid.Row="0" Grid.Column="1" Style="{StaticResource ButtonPadStyle}"
+                    Command="{Binding Path=ClickDigitCommand, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"
+                    CommandParameter="8">
+                    <TextBlock Style="{StaticResource TextBlockDefaultStyle}" Text="8"/>
+                </Button>
+                <Button Grid.Row="0" Grid.Column="2" Style="{StaticResource ButtonPadStyle}"
+                    Command="{Binding Path=ClickDigitCommand, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"
+                    CommandParameter="9">
+                    <TextBlock Style="{StaticResource TextBlockDefaultStyle}" Text="9"/>
+                </Button>
+
+                <Button Grid.Row="1" Grid.Column="0" Style="{StaticResource ButtonPadStyle}"
+                    Command="{Binding Path=ClickDigitCommand, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"
+                    CommandParameter="4">
+                    <TextBlock Style="{StaticResource TextBlockDefaultStyle}" Text="4"/>
+                </Button>
+                <Button Grid.Row="1" Grid.Column="1" Style="{StaticResource ButtonPadStyle}"
+                    Command="{Binding Path=ClickDigitCommand, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"
+                    CommandParameter="5">
+                    <TextBlock Style="{StaticResource TextBlockDefaultStyle}" Text="5"/>
+                </Button>
+                <Button Grid.Row="1" Grid.Column="2" Style="{StaticResource ButtonPadStyle}"
+                    Command="{Binding Path=ClickDigitCommand, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"
+                    CommandParameter="6">
+                    <TextBlock Style="{StaticResource TextBlockDefaultStyle}" Text="6"/>
+                </Button>
+
+                <Button Grid.Row="2" Grid.Column="0" Style="{StaticResource ButtonPadStyle}"
+                    Command="{Binding Path=ClickDigitCommand, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"
+                    CommandParameter="1">
+                    <TextBlock Style="{StaticResource TextBlockDefaultStyle}" Text="1"/>
+                </Button>
+                <Button Grid.Row="2" Grid.Column="1" Style="{StaticResource ButtonPadStyle}"
+                    Command="{Binding Path=ClickDigitCommand, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"
+                    CommandParameter="2">
+                    <TextBlock Style="{StaticResource TextBlockDefaultStyle}" Text="2"/>
+                </Button>
+                <Button Grid.Row="2" Grid.Column="2" Style="{StaticResource ButtonPadStyle}"
+                    Command="{Binding Path=ClickDigitCommand, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"
+                    CommandParameter="3">
+                    <TextBlock Style="{StaticResource TextBlockDefaultStyle}" Text="3"/>
+                </Button>
+
+                <Button Grid.Row="3" Grid.Column="0" Style="{StaticResource ButtonPadStyle}">
+                    <TextBlock Style="{StaticResource TextBlockDefaultStyle}" Text="&#177;"/>
+                </Button>
+                <Button Grid.Row="3" Grid.Column="1" Style="{StaticResource ButtonPadStyle}"
+                    Command="{Binding Path=ClickDigitCommand, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"
+                    CommandParameter="0">
+                    <TextBlock Style="{StaticResource TextBlockDefaultStyle}" Text="0"/>
+                </Button>
+                <Button Grid.Row="3" Grid.Column="2" Style="{StaticResource ButtonPadStyle}">
+                    <TextBlock Style="{StaticResource TextBlockDefaultStyle}" Text=","/>
+                </Button>
+
+                <!--=================== Знаки ===================-->
+
+                <Button Grid.Row="0" Grid.Column="3" Style="{StaticResource ButtonPadStyle}"
+                        Command="{Binding Path=ClickDigitCommand, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"
+                        CommandParameter="">
+                    <TextBlock Style="{StaticResource TextBlockDefaultStyle}" Text="+"/>
+                </Button>
+
+            </Grid>
+        </DockPanel>
+    </Border>
+</helpers:UserControlBase>

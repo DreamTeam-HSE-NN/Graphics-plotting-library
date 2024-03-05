@@ -18,7 +18,7 @@ namespace GraphsPlotting
         private void BtnPrint_Click(object sender, RoutedEventArgs e)
         {
             // Парсим полученное выражение
-            Parcer parser = new Parcer(TextBoxInput.Text);
+            Parser parser = new Parser(TextBoxInput.Text);
             var result = parser.Parse();
             if (result.Token == "Error") return;
             // Получим панель для рисования
