@@ -8,35 +8,43 @@
         
         
         mc:Ignorable="d"
-        Title="MainWindow" Height="644" Width="1232" FontFamily="Times New Roman" FontSize="16">
-    <Grid Name="MainRoot" Margin="0,0,0,-16" Background="Gray">
+        Title="MainWindow" Height="644" Width="1232" FontWeight="Medium" FontFamily="Times New Roman" FontSize="20">
+    <Viewbox Stretch="Uniform">
+        <Grid Name="MainRoot" Margin="0,0,0,-16" Background="Gray" >
 
-        <TextBox x:Name="TextBoxInput" HorizontalAlignment="Left" Margin="0,141,0,0" TextWrapping="Wrap" Text="Write your expression here" VerticalAlignment="Top" Width="436" Height="60" TextChanged="TextBoxInput_TextChanged"/>
-        <Button x:Name ="BtnPrint" Content="Print" HorizontalAlignment="Left" Margin="436,386,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.52,0.501" Height="70" Width="109" Click="BtnPrint_Click"/>
-        <Button Content="1" HorizontalAlignment="Left" Margin="0,526,0,0" VerticalAlignment="Top" Height="70" Width="109" Click="BtnPrint_Click"/>
-        <Button Content="2" HorizontalAlignment="Left" Margin="109,526,0,0" VerticalAlignment="Top" Height="70" Width="109" Click="Button_Click"/>
-        <Button Content="3" HorizontalAlignment="Left" Margin="218,526,0,0" VerticalAlignment="Top" Height="70" Width="109" Click="Button_Click"/>
-        <Button Content="4" HorizontalAlignment="Left" Margin="0,456,0,0" VerticalAlignment="Top" Height="70" Width="109" Click="Button_Click"/>
-        <Button Content="5" HorizontalAlignment="Left" Margin="109,456,0,0" VerticalAlignment="Top" Height="70" Width="109" Click="Button_Click"/>
-        <Button Content="6" HorizontalAlignment="Left" Margin="218,456,0,0" VerticalAlignment="Top" Height="70" Width="109" Click="Button_Click"/>
-        <Button Content="7" HorizontalAlignment="Left" Margin="0,386,0,0" VerticalAlignment="Top" Height="70" Width="109" Click="Button_Click"/>
-        <Button Content="8" HorizontalAlignment="Left" Margin="109,386,0,0" VerticalAlignment="Top" Height="70" Width="109" Click="Button_Click"/>
-        <Button Content="9" HorizontalAlignment="Left" Margin="218,386,0,0" VerticalAlignment="Top" Height="70" Width="109" Click="Button_Click"/>
-        <Button Content="(" HorizontalAlignment="Left" Margin="0,316,0,0" VerticalAlignment="Top" Height="70" Width="109" Click="Button_Click"/>
-        <Button Content=")" HorizontalAlignment="Left" Margin="109,316,0,0" VerticalAlignment="Top" Height="70" Width="109" Click="Button_Click"/>
-        <Button Content="^" HorizontalAlignment="Left" Margin="218,316,0,0" VerticalAlignment="Top" Height="70" Width="109" Click="Button_Click"/>
-        <Button Content="/" HorizontalAlignment="Left" Margin="327,526,0,0" VerticalAlignment="Top" Height="70" Width="109" Click="Button_Click"/>
-        <Button Content="+" HorizontalAlignment="Left" Margin="327,456,0,0" VerticalAlignment="Top" Height="70" Width="109" Click="Button_Click"/>
-        <Button Content="-" HorizontalAlignment="Left" Margin="327,386,0,0" VerticalAlignment="Top" Height="70" Width="109" Click="Button_Click"/>
-        <Button Content="*" HorizontalAlignment="Left" Margin="327,316,0,0" VerticalAlignment="Top" Height="70" Width="109" Click="Button_Click"/>
-        <Button Content="0" HorizontalAlignment="Left" Margin="436,526,0,0" VerticalAlignment="Top" Height="70" Width="109" Click="Button_Click"/>
-        <Button Content="Clear" HorizontalAlignment="Left" Margin="436,456,0,0" VerticalAlignment="Top" Height="70" Width="109" Click="Button_Click"/>
+            <TextBox x:Name="TextBoxInput" HorizontalAlignment="Left" Margin="0,113,0,0" TextWrapping="Wrap" Text="y = sin(x)" VerticalAlignment="Top" Width="436" Height="60" FontSize="40" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" TextChanged="TextBoxInput_TextChanged"/>
+            <Label Content="Write your expression here" HorizontalAlignment="Left" Margin="100,81,0,0" VerticalAlignment="Top" Height="32" Width="236"/>
+            <Label Content="UpperBound" HorizontalAlignment="Left" Margin="0,205,0,0" VerticalAlignment="Top" Height="32" Width="128"/>
+            <Label Content="LowerBound" HorizontalAlignment="Left" Margin="316,206,0,0" VerticalAlignment="Top" Height="30" Width="120"/>
+            <Button x:Name ="BtnPrint" Content="Print" HorizontalAlignment="Left" Margin="436,386,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.52,0.501" Height="70" Width="109" Click="BtnPrint_Click"/>
+            <Button x:Name ="BtnRead" Content="Read file" HorizontalAlignment="Left" Margin="436,316,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.52,0.501" Height="70" Width="109" Click="BtnRead_Click"/>
+            <Button Content="1" HorizontalAlignment="Left" Margin="0,526,0,0" VerticalAlignment="Top" Height="70" Width="109" Click="Button_Click"/>
+            <Button Content="2" HorizontalAlignment="Left" Margin="109,526,0,0" VerticalAlignment="Top" Height="70" Width="109" Click="Button_Click"/>
+            <Button Content="3" HorizontalAlignment="Left" Margin="218,526,0,0" VerticalAlignment="Top" Height="70" Width="109" Click="Button_Click"/>
+            <Button Content="4" HorizontalAlignment="Left" Margin="0,456,0,0" VerticalAlignment="Top" Height="70" Width="109" Click="Button_Click"/>
+            <Button Content="5" HorizontalAlignment="Left" Margin="109,456,0,0" VerticalAlignment="Top" Height="70" Width="109" Click="Button_Click"/>
+            <Button Content="6" HorizontalAlignment="Left" Margin="218,456,0,0" VerticalAlignment="Top" Height="70" Width="109" Click="Button_Click"/>
+            <Button Content="7" HorizontalAlignment="Left" Margin="0,386,0,0" VerticalAlignment="Top" Height="70" Width="109" Click="Button_Click"/>
+            <Button Content="8" HorizontalAlignment="Left" Margin="109,386,0,0" VerticalAlignment="Top" Height="70" Width="109" Click="Button_Click"/>
+            <Button Content="9" HorizontalAlignment="Left" Margin="218,386,0,0" VerticalAlignment="Top" Height="70" Width="109" Click="Button_Click"/>
+            <Button Content="(" HorizontalAlignment="Left" Margin="0,316,0,0" VerticalAlignment="Top" Height="70" Width="109" Click="Button_Click"/>
+            <Button Content=")" HorizontalAlignment="Left" Margin="109,316,0,0" VerticalAlignment="Top" Height="70" Width="109" Click="Button_Click"/>
+            <Button Content="^" HorizontalAlignment="Left" Margin="218,316,0,0" VerticalAlignment="Top" Height="70" Width="109" Click="Button_Click"/>
+            <Button Content="/" HorizontalAlignment="Left" Margin="327,526,0,0" VerticalAlignment="Top" Height="70" Width="109" Click="Button_Click"/>
+            <Button Content="+" HorizontalAlignment="Left" Margin="327,456,0,0" VerticalAlignment="Top" Height="70" Width="109" Click="Button_Click"/>
+            <Button Content="-" HorizontalAlignment="Left" Margin="327,386,0,0" VerticalAlignment="Top" Height="70" Width="109" Click="Button_Click"/>
+            <Button Content="*" HorizontalAlignment="Left" Margin="327,316,0,0" VerticalAlignment="Top" Height="70" Width="109" Click="Button_Click"/>
+            <Button Content="0" HorizontalAlignment="Left" Margin="436,526,0,0" VerticalAlignment="Top" Height="70" Width="109" Click="Button_Click"/>
+            <Button Content="Clear" HorizontalAlignment="Left" Margin="436,456,0,0" VerticalAlignment="Top" Height="70" Width="109" Click="Button_Click"/>
 
 
-        <TextBox x:Name="TextBoxUpBound" HorizontalAlignment="Left" Margin="272,228,0,0" TextWrapping="Wrap" Text="UpBound" VerticalAlignment="Top" Width="164" Height="48" TextChanged="TextBoxInput_TextChanged"/>
-        <TextBox x:Name="TextBoxDownBound" HorizontalAlignment="Left" Margin="0,228,0,0" TextWrapping="Wrap" Text="DownBound" VerticalAlignment="Top" Width="164" Height="48" TextChanged="TextBoxInput_TextChanged"/>
-        <WindowsFormsHost HorizontalAlignment="Left" Height="586" Margin="550,10,0,0" VerticalAlignment="Top" Width="661" ChildChanged="WindowsFormsHost_ChildChanged">
-            <zed:ZedGraphControl Name="zgc" x:Name="zgc" Width="400" Height="400" />
-        </WindowsFormsHost>
-    </Grid>
+            <TextBox x:Name="TextBoxUpBound" HorizontalAlignment="Left" Margin="272,233,0,0" TextWrapping="Wrap" Text="3" VerticalAlignment="Top" Width="164" Height="48" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"
+                       FontSize="30" TextChanged="TextBoxInput_TextChanged"/>
+            <TextBox x:Name="TextBoxDownBound" HorizontalAlignment="Left" Margin="0,233,0,0" TextWrapping="Wrap" Text="-3" VerticalAlignment="Top" Width="164" Height="48" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"
+                       FontSize="30" TextChanged="TextBoxInput_TextChanged"/>
+            <WindowsFormsHost HorizontalAlignment="Left" Height="586" Margin="550,10,0,0" VerticalAlignment="Top" Width="661" ChildChanged="WindowsFormsHost_ChildChanged">
+                <zed:ZedGraphControl  x:Name="zgc" Width="400" Height="400" />
+            </WindowsFormsHost>
+        </Grid>
+    </Viewbox>
 </Window>

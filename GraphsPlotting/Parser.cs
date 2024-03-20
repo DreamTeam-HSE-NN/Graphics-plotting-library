@@ -37,7 +37,7 @@ namespace GraphsPlotting
         {
             if (_i > _input.Length - 1) return "";
 
-            while (_input[_i] == ' ')
+            while (_input[_i] == ' ' || _input[_i] == 'y' || _input[_i] == '=')
                 if (_i < _input.Length - 1) ++_i; else break;
 
             if (Char.IsDigit(_input, _i))
