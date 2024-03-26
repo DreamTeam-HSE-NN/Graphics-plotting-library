@@ -1,6 +1,6 @@
 ﻿using System.Windows.Input;
 
-namespace GraphsPlotting.Helpers
+namespace GraphsPlotting.BaseClasses
 {
     public class ButtonCommand : ICommand
     {

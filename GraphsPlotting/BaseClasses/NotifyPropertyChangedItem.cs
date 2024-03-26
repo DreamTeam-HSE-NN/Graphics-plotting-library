@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel;
 using System.Runtime.CompilerServices;
 
-namespace GraphsPlotting.Helpers
+namespace GraphsPlotting.BaseClasses
 {
     public class NotifyPropertyChangedItem : INotifyPropertyChanged
     {

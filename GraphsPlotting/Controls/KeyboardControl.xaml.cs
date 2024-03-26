@@ -1,14 +1,16 @@
-﻿using GraphsPlotting.Helpers;
+﻿using GraphsPlotting.BaseClasses;
+using GraphsPlotting.Helpers;
+using System.Windows.Input;
 
 namespace GraphsPlotting.Controls
 {
     /// <summary>
     /// Interaction logic for Keyboard.xaml
     /// </summary>
-    public partial class Keyboard : UserControlBase
+    public partial class KeyboardControl
     {
         private KeyboardModel _model;
-        public Keyboard()
+        public KeyboardControl()
         {
             _model = new KeyboardModel();
             DataContext = _model;
@@ -46,13 +48,14 @@ namespace GraphsPlotting.Controls
 
         #region Commands
 
-        public ButtonCommand ClickDigitCommand => new ButtonCommand(ClickDigit!);
+        public ButtonCommand ClickCommand => new ButtonCommand(Click!);
 
-        private void ClickDigit(object obj)
+        private void Click(object obj)
         {
-            if (obj is string str && short.TryParse(str, out _))
+            if (obj is Key key)
             {
-                Expression += str;
+                var a = key.GetStringValue();
+                return;
             }
         }
 

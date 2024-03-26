@@ -11,10 +11,14 @@
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
             <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
         </Grid.ColumnDefinitions>
         <Controls:FunctionsListControl Grid.Column="0"/>
         <WindowsFormsHost Grid.Column="1">
             <zedGraph:ZedGraphControl x:Name="GraphControl" />
         </WindowsFormsHost>
+        <Controls:KeyboardControl Grid.Column="2"/>
+        <Controls:FunctionsBarControl Grid.Column="3"/>
     </Grid>
 </Window>

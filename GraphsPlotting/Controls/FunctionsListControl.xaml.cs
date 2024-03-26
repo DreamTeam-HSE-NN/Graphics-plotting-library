@@ -1,12 +1,12 @@
-﻿using System.Collections.ObjectModel;
-using GraphsPlotting.Helpers;
+﻿using GraphsPlotting.BaseClasses;
+using System.Collections.ObjectModel;
 
 namespace GraphsPlotting.Controls
 {
     /// <summary>
     /// Interaction logic for FunctionsListControl.xaml
     /// </summary>
-    public partial class FunctionsListControl : UserControlBase
+    public partial class FunctionsListControl
     {
         private FunctionsListModel _model;
 
