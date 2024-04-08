@@ -2,7 +2,6 @@
 using System.Windows.Controls;
 using ZedGraph;
 using System.IO;
-using System.Security.RightsManagement;
 
 
 namespace GraphsPlotting
@@ -18,6 +17,27 @@ namespace GraphsPlotting
             zgc.GraphPane.XAxis.Title.Text = "Ось X";
             zgc.GraphPane.YAxis.Title.Text = "Ось Y";
             zgc.GraphPane.Title.Text = "График";
+            zgc.ContextMenuBuilder += new ZedGraphControl.ContextMenuBuilderEventHandler(zedGraph_ContextMenuBuilder);
+            zgc.DoubleClickEvent += new ZedGraphControl.ZedMouseEventHandler(zedGraph_DoubleClick);
+        }
+
+        private void zedGraph_ContextMenuBuilder(ZedGraphControl sender, ContextMenuStrip menuStrip, System.Drawing.Point mousePt,
+                                         ZedGraphControl.ContextMenuObjectState objState)
+        {
+            // Переименуем (переведем на русский язык) некоторые пункты контекстного меню
+            menuStrip.Items[0].Text = "Копировать";
+            menuStrip.Items[1].Text = "Сохранить как картинку…";
+            menuStrip.Items[2].Text = "Параметры страницы…";
+            menuStrip.Items[3].Text = "Печать…";
+            menuStrip.Items[4].Text = "Показывать значения в точках…";
+            menuStrip.Items[5].Text = "Отдалиться";
+            menuStrip.Items[6].Text = "Отменить все масштабирования/перемещения";
+            menuStrip.Items[7].Text = "Установить масштаб по умолчанию…";
+        }
+
+        private bool zedGraph_DoubleClick(ZedGraphControl sender, MouseEventArgs e)
+        {
+            return false;
         }
 
         uint color = 0;
@@ -28,10 +48,10 @@ namespace GraphsPlotting
 
         private void BtnRead_Click(object sender, RoutedEventArgs e)
         {
-            //поменять путь на своё расположение репозитория
-            string path = "C:\\Users\\User\\source\\repos\\graphics-plotting-library\\GraphsPlotting\\functions.txt";
-            if (File.Exists(path)) 
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            if (openFileDialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
             {
+                var path = openFileDialog.FileName;
                 string line;
                 StreamReader reader = new StreamReader(path);
                 while ((line = reader.ReadLine()) != null)
@@ -140,6 +160,11 @@ namespace GraphsPlotting
                 TextBoxInput.Text += str;
             }
 
+        }
+
+        private void zgc_DoubleClick(object sender, RoutedEventArgs e) 
+        {
+            
         }
 
         private void TextBoxInput_TextChanged(object sender, TextChangedEventArgs e)

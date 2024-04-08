@@ -8,12 +8,12 @@
         
         
         mc:Ignorable="d"
-        Title="MainWindow" Height="644" Width="1232" FontWeight="Medium" FontFamily="Times New Roman" FontSize="20">
+        Title="Рисование графиков" Height="644" Width="1232" FontWeight="Medium" FontFamily="Times New Roman" FontSize="20">
     <Viewbox Stretch="Uniform">
         <Grid Name="MainRoot" Margin="0,0,0,-16" Background="Gray" >
 
             <TextBox x:Name="TextBoxInput" HorizontalAlignment="Left" Margin="0,113,0,0" TextWrapping="Wrap" Text="y = sin(x)" VerticalAlignment="Top" Width="436" Height="60" FontSize="40" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" TextChanged="TextBoxInput_TextChanged"/>
-            <Label Content="Write your expression here" HorizontalAlignment="Left" Margin="100,81,0,0" VerticalAlignment="Top" Height="32" Width="236"/>
+            <Label Content="Write your expression here" HorizontalAlignment="Left" Margin="64,65,0,0" VerticalAlignment="Top" Height="43" Width="334" FontSize="30"/>
             <Label Content="UpperBound" HorizontalAlignment="Left" Margin="0,205,0,0" VerticalAlignment="Top" Height="32" Width="128"/>
             <Label Content="LowerBound" HorizontalAlignment="Left" Margin="316,206,0,0" VerticalAlignment="Top" Height="30" Width="120"/>
             <Button x:Name ="BtnPrint" Content="Print" HorizontalAlignment="Left" Margin="436,386,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.52,0.501" Height="70" Width="109" Click="BtnPrint_Click"/>
