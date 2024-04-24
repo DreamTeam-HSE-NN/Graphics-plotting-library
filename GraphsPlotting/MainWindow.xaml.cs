@@ -150,8 +150,7 @@ namespace GraphsPlotting
             string str = (string)((System.Windows.Controls.Button)e.OriginalSource).Content;
 
             if (str == "Очистить")
-            {
-                TextBoxInput.Text = "";
+            {                
                 zgc.GraphPane.CurveList.Clear();
                 zgc.Invalidate();
             }
@@ -183,7 +182,7 @@ namespace GraphsPlotting
             {
                 first.Content = "sin()";
                 second.Content = "cos()";
-                third.Content = "e()";
+                third.Content = "e^()";
                 fourth.Content = "x^2";
                 fifth.Content = "x^3";
                 sixth.Content = "x^(1/2)";
@@ -205,6 +204,11 @@ namespace GraphsPlotting
                 ninth.Content = "9";
                 functions.Content = "Функции";
             }
+        }
+
+        private void Button_Click_3(object sender, RoutedEventArgs e)
+        {
+            TextBoxInput.Text = "";
         }
     }
 }  
