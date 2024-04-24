@@ -10,7 +10,7 @@ namespace GraphsPlotting
     /// Interaction logic for MainWindow.xaml
     /// </summary>
     public partial class MainWindow : Window
-    {
+    {       
         public MainWindow()
         {
             InitializeComponent();
@@ -116,7 +116,7 @@ namespace GraphsPlotting
                 list.Add(x, parser.Calculate(result, x));
             }
 
-            Color[] clr = { Color.Brown, Color.Blue, Color.Green, Color.Red, Color.Gray, Color.Yellow, Color.Purple, Color.Pink, Color.Orange };
+            Color[] clr = { Color.Brown, Color.Blue, Color.Green, Color.Red, Color.Gray, Color.Purple, Color.Pink, Color.Orange };
             // Создадим кривую с названием "Sinc",
             // которая будет рисоваться голубым цветом (Color.Blue),
             // Опорные точки выделяться не будут (SymbolType.None)
@@ -149,7 +149,7 @@ namespace GraphsPlotting
         {
             string str = (string)((System.Windows.Controls.Button)e.OriginalSource).Content;
 
-            if (str == "Clear")
+            if (str == "Очистить")
             {
                 TextBoxInput.Text = "";
                 zgc.GraphPane.CurveList.Clear();
@@ -157,14 +157,14 @@ namespace GraphsPlotting
             }
             else
             {
-                TextBoxInput.Text += str;
+                TextBoxInput.SelectedText += str;
             }
 
         }
 
-        private void zgc_DoubleClick(object sender, RoutedEventArgs e) 
+        private void zgc_DoubleClick(object sender, RoutedEventArgs e)
         {
-            
+
         }
 
         private void TextBoxInput_TextChanged(object sender, TextChangedEventArgs e)
@@ -174,7 +174,37 @@ namespace GraphsPlotting
 
         private void WindowsFormsHost_ChildChanged(object sender, System.Windows.Forms.Integration.ChildChangedEventArgs e)
         {
-            
+
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            if(functions.Content == "Функции")
+            {
+                first.Content = "sin()";
+                second.Content = "cos()";
+                third.Content = "e()";
+                fourth.Content = "x^2";
+                fifth.Content = "x^3";
+                sixth.Content = "x^(1/2)";
+                seventh.Content = "log()";
+                eighth.Content = "ln()";
+                ninth.Content = "tg()";
+                functions.Content = "Цифры";
+            }
+            else
+            {
+                first.Content = "1";
+                second.Content = "2";
+                third.Content = "3";
+                fourth.Content = "4";
+                fifth.Content = "5";
+                sixth.Content = "6";
+                seventh.Content = "7";
+                eighth.Content = "8";
+                ninth.Content = "9";
+                functions.Content = "Функции";
+            }
         }
     }
-}
+}  

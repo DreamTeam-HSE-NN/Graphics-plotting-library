@@ -13,20 +13,20 @@
         <Grid Name="MainRoot" Margin="0,0,0,-16" Background="Gray" >
 
             <TextBox x:Name="TextBoxInput" HorizontalAlignment="Left" Margin="0,113,0,0" TextWrapping="Wrap" Text="y = sin(x)" VerticalAlignment="Top" Width="436" Height="60" FontSize="40" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" TextChanged="TextBoxInput_TextChanged"/>
-            <Label Content="Write your expression here" HorizontalAlignment="Left" Margin="64,65,0,0" VerticalAlignment="Top" Height="43" Width="334" FontSize="30"/>
-            <Label Content="UpperBound" HorizontalAlignment="Left" Margin="0,205,0,0" VerticalAlignment="Top" Height="32" Width="128"/>
-            <Label Content="LowerBound" HorizontalAlignment="Left" Margin="316,206,0,0" VerticalAlignment="Top" Height="30" Width="120"/>
-            <Button x:Name ="BtnPrint" Content="Print" HorizontalAlignment="Left" Margin="436,386,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.52,0.501" Height="70" Width="109" Click="BtnPrint_Click"/>
-            <Button x:Name ="BtnRead" Content="Read file" HorizontalAlignment="Left" Margin="436,316,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.52,0.501" Height="70" Width="109" Click="BtnRead_Click"/>
-            <Button Content="1" HorizontalAlignment="Left" Margin="0,526,0,0" VerticalAlignment="Top" Height="70" Width="109" Click="Button_Click"/>
-            <Button Content="2" HorizontalAlignment="Left" Margin="109,526,0,0" VerticalAlignment="Top" Height="70" Width="109" Click="Button_Click"/>
-            <Button Content="3" HorizontalAlignment="Left" Margin="218,526,0,0" VerticalAlignment="Top" Height="70" Width="109" Click="Button_Click"/>
-            <Button Content="4" HorizontalAlignment="Left" Margin="0,456,0,0" VerticalAlignment="Top" Height="70" Width="109" Click="Button_Click"/>
-            <Button Content="5" HorizontalAlignment="Left" Margin="109,456,0,0" VerticalAlignment="Top" Height="70" Width="109" Click="Button_Click"/>
-            <Button Content="6" HorizontalAlignment="Left" Margin="218,456,0,0" VerticalAlignment="Top" Height="70" Width="109" Click="Button_Click"/>
-            <Button Content="7" HorizontalAlignment="Left" Margin="0,386,0,0" VerticalAlignment="Top" Height="70" Width="109" Click="Button_Click"/>
-            <Button Content="8" HorizontalAlignment="Left" Margin="109,386,0,0" VerticalAlignment="Top" Height="70" Width="109" Click="Button_Click"/>
-            <Button Content="9" HorizontalAlignment="Left" Margin="218,386,0,0" VerticalAlignment="Top" Height="70" Width="109" Click="Button_Click"/>
+            <Label Content="Напишите функцию" HorizontalAlignment="Left" Margin="10,65,0,0" VerticalAlignment="Top" Height="43" Width="388" FontSize="30"/>
+            <Label Content="Нижняя граница" HorizontalAlignment="Left" Margin="0,205,0,0" VerticalAlignment="Top" Height="32" Width="164"/>
+            <Label Content="Верхняя граница" HorizontalAlignment="Left" Margin="272,206,0,0" VerticalAlignment="Top" Height="30" Width="164"/>
+            <Button x:Name ="BtnPrint" Content="Построить" HorizontalAlignment="Left" Margin="436,113,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.52,0.501" Height="70" Width="114" Click="BtnPrint_Click"/>
+            <Button x:Name ="BtnRead" Content="Из файла" HorizontalAlignment="Left" Margin="436,456,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.52,0.501" Height="70" Width="109" Click="BtnRead_Click"/>
+            <Button x:Name="first" Content="1" HorizontalAlignment="Left" Margin="0,526,0,0" VerticalAlignment="Top" Height="70" Width="109" Click="Button_Click"/>
+            <Button x:Name="second" Content="2" HorizontalAlignment="Left" Margin="109,526,0,0" VerticalAlignment="Top" Height="70" Width="109" Click="Button_Click"/>
+            <Button x:Name="third" Content="3" HorizontalAlignment="Left" Margin="218,526,0,0" VerticalAlignment="Top" Height="70" Width="109" Click="Button_Click"/>
+            <Button x:Name="fourth" Content="4" HorizontalAlignment="Left" Margin="0,456,0,0" VerticalAlignment="Top" Height="70" Width="109" Click="Button_Click"/>
+            <Button x:Name="fifth" Content="5" HorizontalAlignment="Left" Margin="109,456,0,0" VerticalAlignment="Top" Height="70" Width="109" Click="Button_Click"/>
+            <Button x:Name="sixth" Content="6" HorizontalAlignment="Left" Margin="218,456,0,0" VerticalAlignment="Top" Height="70" Width="109" Click="Button_Click"/>
+            <Button x:Name="seventh" Content="7" HorizontalAlignment="Left" Margin="0,386,0,0" VerticalAlignment="Top" Height="70" Width="109" Click="Button_Click"/>
+            <Button x:Name="eighth" Content="8" HorizontalAlignment="Left" Margin="109,386,0,0" VerticalAlignment="Top" Height="70" Width="109" Click="Button_Click"/>
+            <Button x:Name="ninth" Content="9" HorizontalAlignment="Left" Margin="218,386,0,0" VerticalAlignment="Top" Height="70" Width="109" Click="Button_Click"/>
             <Button Content="(" HorizontalAlignment="Left" Margin="0,316,0,0" VerticalAlignment="Top" Height="70" Width="109" Click="Button_Click"/>
             <Button Content=")" HorizontalAlignment="Left" Margin="109,316,0,0" VerticalAlignment="Top" Height="70" Width="109" Click="Button_Click"/>
             <Button Content="^" HorizontalAlignment="Left" Margin="218,316,0,0" VerticalAlignment="Top" Height="70" Width="109" Click="Button_Click"/>
@@ -35,7 +35,7 @@
             <Button Content="-" HorizontalAlignment="Left" Margin="327,386,0,0" VerticalAlignment="Top" Height="70" Width="109" Click="Button_Click"/>
             <Button Content="*" HorizontalAlignment="Left" Margin="327,316,0,0" VerticalAlignment="Top" Height="70" Width="109" Click="Button_Click"/>
             <Button Content="0" HorizontalAlignment="Left" Margin="436,526,0,0" VerticalAlignment="Top" Height="70" Width="109" Click="Button_Click"/>
-            <Button Content="Clear" HorizontalAlignment="Left" Margin="436,456,0,0" VerticalAlignment="Top" Height="70" Width="109" Click="Button_Click"/>
+            <Button Content="Очистить" HorizontalAlignment="Left" Margin="436,183,0,0" VerticalAlignment="Top" Height="70" Width="114" Click="Button_Click"/>
 
 
             <TextBox x:Name="TextBoxUpBound" HorizontalAlignment="Left" Margin="272,233,0,0" TextWrapping="Wrap" Text="3" VerticalAlignment="Top" Width="164" Height="48" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"
@@ -45,6 +45,9 @@
             <WindowsFormsHost HorizontalAlignment="Left" Height="586" Margin="550,10,0,0" VerticalAlignment="Top" Width="661" ChildChanged="WindowsFormsHost_ChildChanged">
                 <zed:ZedGraphControl  x:Name="zgc" Width="400" Height="400" />
             </WindowsFormsHost>
+            <Border BorderBrush="Black" BorderThickness="1">
+                <Button x:Name="functions" Content="Функции" Margin="435,385,665,139" Click="Button_Click_1"/>
+            </Border>
         </Grid>
     </Viewbox>
 </Window>
