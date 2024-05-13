@@ -58,6 +58,9 @@ namespace GraphsPlotting
                 case 'x':
                     ++_i;
                     return "x";
+                case 'e':
+                    ++_i;
+                    return "e";
                 case '+':
                     ++_i;
                     return "+";
@@ -74,30 +77,53 @@ namespace GraphsPlotting
                     ++_i;
                     return "^";
                 case 's':
-                    if (_input[_i + 1] == 'i')
+                    if (_input[_i + 1] == 'i' && _input[_i + 2] == 'n')
                     {
-                        _i += 2;
-                        goto case 'n';
-                    }
-                    if (_input[_i + 1] == '(')
-                    {
-                        ++_i;
-                        return "cos";
-                    }
-                    break;
-                case 'n':
-                    if (_input[_i] == 'n')
-                    {
-                        ++_i;
+                        _i += 3;
                         return "sin";
                     }
-                    break;
-
+                    return "";
                 case 'c':
                     if (_input[_i + 1] == 'o' && _input[_i + 2] == 's')
+                    {
                         _i += 3;
-                    return "cos";
-
+                        return "cos";
+                    }
+                    if (_input[_i + 1] == 't' && _input[_i + 2] == 'g')
+                    {
+                        _i += 3;
+                        return "ctg";
+                    }
+                    return "";
+                case 't':
+                    if (_input[_i + 1] == 'g')
+                    {
+                        _i += 2;
+                        return "tg";
+                    }
+                    return "";
+                case 'l':
+                    if (_input[_i + 1] == 'g')
+                    {
+                        _i += 2;
+                        return "lg";
+                    }
+                    if (_input[_i + 1] == 'n')
+                    {
+                        _i += 2;
+                        return "ln";
+                    }
+                    return "";
+/*                case 'a':
+                    _i++;
+                    if (_input[_i] == 's')
+                        goto case 's';
+                    if (_input[_i] == 'c')
+                        goto case 'c';
+                    if (_input[_i] == 't')
+                        goto case 't';
+                    break;
+*/
                 case '(':
                     ++_i;
                     return "(";
@@ -122,7 +148,7 @@ namespace GraphsPlotting
                 return result;
             }
 
-            if (Char.IsDigit(token[0]) || token[0] == 'x')
+            if (Char.IsDigit(token[0]) || token[0] == 'x' || token[0] == 'e')
                 return new Expression(token);
 
             var arg = Parse_simple_expression();
@@ -206,11 +232,21 @@ namespace GraphsPlotting
                     if (expr.Token == "abs") return Math.Abs(c);
                     if (expr.Token == "sin") return Math.Sin(c);
                     if (expr.Token == "cos") return Math.Cos(c);
+                    if (expr.Token == "ln") return Math.Log(c);
+                    if (expr.Token == "lg") return Math.Log10(c);
+                    if (expr.Token == "tg") return Math.Tan(c);
+                    if (expr.Token == "ctg") return 1/Math.Tan(c);
+                    if (expr.Token == "asin") return Math.Asin(c);
+                    if (expr.Token == "acos") return Math.Acos(c);
+                    if (expr.Token == "atg") return Math.Atan(c);
+                    if (expr.Token == "actg") return 1/Math.Atan(c);
                     return -3;
 
                 case 0:
                     if (expr.Token == "x")
                         return (double)x;
+                    if (expr.Token == "e") 
+                        return Math.E;
                     return Double.Parse(expr.Token);
             }
 

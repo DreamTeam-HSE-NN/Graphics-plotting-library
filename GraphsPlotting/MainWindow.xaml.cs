@@ -37,7 +37,19 @@ namespace GraphsPlotting
 
         private bool zedGraph_DoubleClick(ZedGraphControl sender, MouseEventArgs e)
         {
-            return false;
+            double x, y;
+            //Конвертация координат из пикселей окна в систему координат графика
+            zgc.GraphPane.ReverseTransform(e.Location, out x, out y);
+            PointPairList list = new PointPairList();
+            double.TryParse(TextBoxDownBound.Text, out x);
+            list.Add(x, y);
+            double.TryParse(TextBoxUpBound.Text, out x);
+            list.Add(x, y);
+            LineItem myCurve = zgc.GraphPane.AddCurve("", list, Color.Black);
+            //Установка стиля пунктирной линии
+            myCurve.Line.Style = System.Drawing.Drawing2D.DashStyle.Dash;
+            zgc.Invalidate();
+            return true;
         }
 
         uint color = 0;
@@ -96,6 +108,14 @@ namespace GraphsPlotting
             // Очистим список кривых на тот случай, если до этого сигналы уже были нарисованы
             //pane.CurveList.Clear();
 
+            // Установим масштаб по умолчанию для оси X
+            pane.XAxis.Scale.MinAuto = true;
+            pane.XAxis.Scale.MaxAuto = true;
+
+            // Установим масштаб по умолчанию для оси Y
+            pane.YAxis.Scale.MinAuto = true;
+            pane.YAxis.Scale.MaxAuto = true;
+
             // Создадим список точек
             PointPairList list = new PointPairList();
 
@@ -121,11 +141,10 @@ namespace GraphsPlotting
             // которая будет рисоваться голубым цветом (Color.Blue),
             // Опорные точки выделяться не будут (SymbolType.None)
             LineItem myCurve = pane.AddCurve(input, list, clr[color++ % clr.Length], SymbolType.None);
-
             // Вызываем метод AxisChange (), чтобы обновить данные об осях.
             // В противном случае на рисунке будет показана только часть графика,
             // которая умещается в интервалы по осям, установленные по умолчанию
-            zgc.AxisChange();
+            //zgc.AxisChange();
 
             // Обновляем график
             zgc.Invalidate();
@@ -161,11 +180,6 @@ namespace GraphsPlotting
 
         }
 
-        private void zgc_DoubleClick(object sender, RoutedEventArgs e)
-        {
-
-        }
-
         private void TextBoxInput_TextChanged(object sender, TextChangedEventArgs e)
         {
 
@@ -186,7 +200,7 @@ namespace GraphsPlotting
                 fourth.Content = "x^2";
                 fifth.Content = "x^3";
                 sixth.Content = "x^(1/2)";
-                seventh.Content = "log()";
+                seventh.Content = "lg()";
                 eighth.Content = "ln()";
                 ninth.Content = "tg()";
                 functions.Content = "Цифры";
