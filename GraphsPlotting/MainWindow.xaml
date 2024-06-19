@@ -37,7 +37,8 @@
             <Button Content="0" HorizontalAlignment="Left" Margin="436,526,0,0" VerticalAlignment="Top" Height="70" Width="109" Click="Button_Click"/>
             <Button Content="Очистить" HorizontalAlignment="Left" Margin="436,183,0,0" VerticalAlignment="Top" Height="70" Width="114" Click="Button_Click"/>
             <Button x:Name="functions" Content="Функции" Margin="436,386,665,140" Click="Button_Click_1" RenderTransformOrigin="0.903,0.524"/>
-
+            <Button Content="×" Margin="377,111,774,423" FontSize="50" Click="Button_Click_3"/>   
+            
             <TextBox x:Name="TextBoxUpBound" HorizontalAlignment="Left" Margin="272,233,0,0" TextWrapping="Wrap" Text="3" VerticalAlignment="Top" Width="164" Height="48" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"
                        FontSize="30" TextChanged="TextBoxInput_TextChanged"/>
             <TextBox x:Name="TextBoxDownBound" HorizontalAlignment="Left" Margin="0,233,0,0" TextWrapping="Wrap" Text="-3" VerticalAlignment="Top" Width="164" Height="48" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"
@@ -45,10 +46,7 @@
             <WindowsFormsHost HorizontalAlignment="Left" Height="586" Margin="550,10,0,0" VerticalAlignment="Top" Width="661" ChildChanged="WindowsFormsHost_ChildChanged">
                 <zed:ZedGraphControl  x:Name="zgc" Width="400" Height="400" />
             </WindowsFormsHost>
-            <Border BorderBrush="Black" BorderThickness="1">
-                <Button Content="×" Margin="377,111,774,423" FontSize="50" Click="Button_Click_3"/>
-
-            </Border>
+            
         </Grid>
     </Viewbox>
 </Window>

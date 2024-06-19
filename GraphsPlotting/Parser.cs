@@ -184,6 +184,7 @@ namespace GraphsPlotting
                     return leftExpr.Args[0];
                 }
             }
+            else if (leftExpr.Token == "Incorrect input" || leftExpr.Token == "Expexted )") return leftExpr;
 
             while (true)
             {
@@ -209,6 +210,11 @@ namespace GraphsPlotting
                 return new Expression("Error");
             }
             else return result;
+        }
+
+        private bool Checker(Expression expr)
+        {
+            return false;
         }
         public double Calculate(Expression expr, double x)
         {
