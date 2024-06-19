@@ -15,7 +15,7 @@
 
   <ItemGroup>
     <Reference Include="ZedGraph">
-      <HintPath>..\..\..\..\..\Desktop\zedgraph_dll_v5.1.5\ZedGraph.dll</HintPath>
+      <HintPath>..\..\..\..\Desktop\ZedGraph.dll</HintPath>
     </Reference>
   </ItemGroup>
 
