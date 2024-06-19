@@ -192,31 +192,49 @@ namespace GraphsPlotting
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-            if(functions.Content == "Функции")
+            if(functions.Content == "Цифры")
             {
-                first.Content = "sin()";
-                second.Content = "cos()";
-                third.Content = "e^()";
-                fourth.Content = "x^2";
-                fifth.Content = "x^3";
-                sixth.Content = "x^(1/2)";
-                seventh.Content = "lg()";
-                eighth.Content = "ln()";
-                ninth.Content = "tg()";
-                functions.Content = "Цифры";
-            }
-            else
-            {
+                first.FontSize = 50;
                 first.Content = "1";
+                second.FontSize = 50;
                 second.Content = "2";
+                third.FontSize = 50;
                 third.Content = "3";
+                fourth.FontSize = 40;
                 fourth.Content = "4";
+                fifth.FontSize = 50;
                 fifth.Content = "5";
+                sixth.FontSize = 50;
                 sixth.Content = "6";
+                seventh.FontSize = 50;
                 seventh.Content = "7";
+                eighth.FontSize = 50;
                 eighth.Content = "8";
+                ninth.FontSize = 50;
                 ninth.Content = "9";
                 functions.Content = "Функции";
+            }
+            else
+            {                
+                first.FontSize = 30;
+                first.Content = "sin()";
+                second.FontSize = 30;
+                second.Content = "cos()";
+                third.FontSize = 30;
+                third.Content = "e^()";
+                fourth.FontSize = 30;
+                fourth.Content = "x^2";
+                fifth.FontSize = 30;
+                fifth.Content = "x^3";
+                sixth.FontSize = 28;
+                sixth.Content = "x^(1/2)";
+                seventh.FontSize = 30;
+                seventh.Content = "lg()";
+                eighth.FontSize = 30;
+                eighth.Content = "ln()";
+                ninth.FontSize = 30;
+                ninth.Content = "tg()";
+                functions.Content = "Цифры";
             }
         }
 

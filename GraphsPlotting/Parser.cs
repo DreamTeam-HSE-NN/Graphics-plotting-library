@@ -6,8 +6,6 @@ namespace GraphsPlotting
     class Expression
     {
         public string Token;
-        //public Expression arg1;
-        //public Expression arg2;
         public Expression[] Args = [];
         public Expression(string token) { this.Token = token; }
         public Expression(string token, Expression a)
